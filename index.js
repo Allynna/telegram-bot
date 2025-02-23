@@ -1,5 +1,17 @@
 const TelegramBot = require('node-telegram-bot-api');
 
+// Use the environment variable for the token
+const token = process.env.TOKEN; // This will use the value of the TOKEN variable set in Railway
+
+if (!token) {
+  console.log('Bot token is not set! Make sure you have the TOKEN environment variable set.');
+  process.exit(1);
+}
+
+const bot = new TelegramBot(token, { polling: true });
+
+// Your bot logic here...
+
 // Replace with your bot's token from BotFather
 const token = '7692634459:AAGyhx7nj1veZsFYNVh6DSu72Rk6jDtCKco';
 
